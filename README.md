@@ -7,5 +7,8 @@
 ### Initial Project Plan
  - https://cwuwildcat-my.sharepoint.com/:w:/g/personal/grovera_cwu_edu/ESXG9pPZQy1FigfT7mgsgu4BkNeSZ5PtgbEIG62loe3EWg?e=mnGYrl
 
+### Design Document
+ - https://cwuwildcat-my.sharepoint.com/:w:/g/personal/grovera_cwu_edu/EfgOhNfZCxtGiuyVcm82xAIBJhchNJe4y74a2yvXq0J6NA?e=uOhhNh
+
 ### Weekly Status Reports
  - Google drive folder: https://drive.google.com/drive/folders/1qvxmKX1ILJoWjfxnl5oT4KT7G2WmzOA-?usp=share_link
