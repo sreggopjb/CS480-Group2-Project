@@ -10,7 +10,7 @@
 ### Design Document
  - https://cwuwildcat-my.sharepoint.com/:w:/g/personal/grovera_cwu_edu/EfgOhNfZCxtGiuyVcm82xAIBJhchNJe4y74a2yvXq0J6NA?e=uOhhNh
  
-###
+### Test Plan
  - https://cwuwildcat-my.sharepoint.com/:w:/g/personal/grovera_cwu_edu/EbUvsdTddYpCphtxk38_Gv0B3DqdQteoYlthETqevd8k2g?e=lSzhqO
 
 ### Weekly Status Reports
