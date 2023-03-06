@@ -2,3 +2,7 @@
 ~$nancial Formula Sheet.docx
 
 *.tmp
+.project
+.settings/.jsdtscope
+*.container
+*.name
