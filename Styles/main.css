@@ -1,0 +1,28 @@
+html{
+    background: darkblue;
+}
+body{
+    background: lightblue;
+    display: block;
+    margin: 5%;
+    text-align: center;
+}
+#edit{
+    float: right;
+    background: red;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 8px;
+}
+#favorites{
+    background: grey;
+    padding: 10px;
+    width: 75%;
+    margin: 0 auto;
+}
+.stock_box{
+    background: white;
+    width: 10%;
+    margin: 3px;
+    border: solid 1px;
+}
