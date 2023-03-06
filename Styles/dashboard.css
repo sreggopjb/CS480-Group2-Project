@@ -1,22 +1,48 @@
 html{
-    background: darkblue;
+    background-image: url("../Images/stock_background.jpg");
     height: 100%;
+    margin: 0 auto;
 }
 body{
 	height: 100%;
+    width: 75%;
 	font-size: .875rem;
+    margin: 0 auto;
+    background: black;
+
+}
+header {
+    background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay{
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+
+}
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+h3, p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
 }
 main{
-    background-image: linear-gradient(white, darkblue);
-    display: block;
     text-align: center;
-    height: 100%; 
-}
-.container-fluid {
-	height: 100%;
-}
-.row {
-	height:100%;
 }
 #edit{
     float: right;
@@ -26,7 +52,6 @@ main{
     padding: 8px;
 }
 #favorites{
-    background: grey;
     padding: 10px;
     width: 75%;
     margin: 0 auto;
@@ -36,101 +61,68 @@ main{
     width: 10%;
     margin: 3px;
     border: solid 1px;
+    border-radius: 8px;
 }
 
-.feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    z-index: 0;
+    border-radius: 10px;
 }
 
-/*
- * Sidebar
- */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  /* rtl:raw:
-  right: 0;
-  */
-  bottom: 0;
-  /* rtl:remove */
-  left: 0;
-  z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
 }
 
-@media (max-width: 767.98px) {
-  .sidebar {
-    top: 5rem;
-  }
+.glow-on-hover:active {
+    color: #000
 }
 
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+.glow-on-hover:active:after {
+    background: transparent;
 }
 
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
+.glow-on-hover:hover:before {
+    opacity: 1;
 }
 
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #727272;
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
 
-.sidebar .nav-link.active {
-  color: #2470dc;
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
 
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-  color: inherit;
-}
-
-.sidebar-heading {
-  font-size: .75rem;
-  text-transform: uppercase;
-}
-
-/*
- * Navbar
- */
-
-.navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
-}
-
-.navbar .navbar-toggler {
-  top: .25rem;
-  right: 1rem;
-}
-
-.navbar .form-control {
-  padding: .75rem 1rem;
-  border-width: 0;
-  border-radius: 0;
-}
-
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
-}
-
-.form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-}
