@@ -1,28 +1,35 @@
 html{
-    background: darkblue;
+    background: #004e64;
 }
 body{
-    background: lightblue;
+    background: #00a5cf;
     display: block;
     margin: 5%;
     text-align: center;
 }
+h1{
+    color: white;
+}
 #edit{
     float: right;
-    background: red;
+    background: #9fffcb;
     font-size: 20px;
     border-radius: 8px;
     padding: 8px;
 }
 #favorites{
-    background: grey;
+    background: #25a18e;
     padding: 10px;
     width: 75%;
     margin: 0 auto;
+    margin-bottom: 5px;
 }
 .stock_box{
-    background: white;
+    background: #9fffcb;
     width: 10%;
     margin: 3px;
     border: solid 1px;
+}
+.stock_box > h2{
+    color: black;
 }
