@@ -50,7 +50,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
 
-                            <tbody class = "tbody_content">
+                            <tbody id = "tbody_content">
                                 //Script fills this in
                             <script>
                                 // var someDict{"OPEN": "12.34", Close: 13.24, Beta: 3.21 ...}
@@ -59,6 +59,19 @@
                                     // append tbody_content
                                         //one col to the key
                                         // other col is value
+
+                                $('#tbody_content').append(
+                                    "<tr>" +
+                                        "<td>"+dictkey+"</td>" +
+                                        "<td>"+dictval+"</td>" +
+                                    "</tr>"+
+                                    "<tr>" +
+                                    "<td>"+dictkey+"</td>" +
+                                    "<td>"+dictval+"</td>" +
+                                    "</tr>"+
+
+
+                                )
                                //<tr>
                                     //<td>key</td>
                                     //<td>value</td>
