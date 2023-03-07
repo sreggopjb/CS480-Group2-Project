@@ -9,6 +9,7 @@
 	<!-- Bootstrap core CSS -->
 	<!-- Custom styles for this template -->
 	<link href="Styles/dashboard.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
@@ -19,9 +20,15 @@
 	</header>
 	<main>
 
-
+		<a href="info.html"><button class="glow-on-hover" type="button" >Edit</button></a>
 		<div id="favorites">
-			<a href="info.html"><button class="glow-on-hover" type="button" >Temp Link to Stock Info</button></a>
+		</div>
+		<div id="add_popup">
+			<button type="button" onclick="showAdd">Add Stock</button>
+			<form id="add_form" action="add_stock()" method = "post">
+				<input type="text" placeholder="Stock Symbol"><br>
+				<input type="submit" value ="Add">
+			</form>
 		</div>
 	</main>
 

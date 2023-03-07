@@ -1,5 +1,5 @@
 "use strict";
-
+const someStocks = ["AAPL", "AMZN", "MSFT", "TSLA"];
 $(document).ready(() => {
 //cookie
         //if theres a cookie
@@ -7,7 +7,7 @@ $(document).ready(() => {
         // if no cookie
             //create one
   const apiKey = "NMBJV9I1JXOWWEZ6";
-  const someStocks = ["AAPL", "AMZN", "MSFT", "TSLA"];
+
 
   for (let i = 0; i < someStocks.length; i++) {
     $.getJSON(
@@ -17,12 +17,23 @@ $(document).ready(() => {
       const stockPrice = parseFloat(stockInfo["4. close"]).toFixed(2);
 
       $('#favorites').append(`
+        <a onclick="showStock(someStocks[i])">
         <div class="stock_box">
-          <h1>${someStocks[i]}</h1>
+           <button>Delete</button>
+           
+          <h2>${someStocks[i]}</h2>
           <h2 class="stock_price">$${stockPrice}</h2>
         </div>
+        </a>
       `);
     });
   }
 });
+
+
+function addStock(){
+  let popup = document.getElementById("add_popup");
+  document.location.reload();
+
+}
 
