@@ -41,7 +41,8 @@ $(document).ready(() => {
 
 function showStock(stock = "aaple"){
   console.log(stock);
-  //localStorage.setItem("stock", stock);
+  localStorage.setItem("stock", stock);
+  window.location.assign("../stock.html");
 }
 function addStock() {
   let popup = document.getElementById("add_popup");
