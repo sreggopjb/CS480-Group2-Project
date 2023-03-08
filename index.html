@@ -35,41 +35,5 @@
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="Scripts/index.js"></script>
-	<script src="Scripts/cookie.js"></script>
-    <script>
-        // Get the user's favorite stocks from the cookie
-        const favoriteStocks = JSON.parse(getFavoriteStocksCookie());
-        if (favoriteStocks) {
-            // Display the user's favorite stocks on the page
-            const favoritesDiv = document.getElementById("favorites");
-            for (let i = 0; i < favoriteStocks.length; i++) {
-                const stock = favoriteStocks[i];
-                const stockDiv = document.createElement("div");
-                stockDiv.innerText = stock;
-                favoritesDiv.appendChild(stockDiv);
-            }
-        }
-
-        function addStock() {
-            // Add the new stock to the favorites list
-            const favoritesDiv = document.getElementById("favorites");
-            const stockInput = document.querySelector("#add_form input[type='text']");
-            const newStock = stockInput.value.toUpperCase();
-            const stockDiv = document.createElement("div");
-            stockDiv.innerText = newStock;
-            favoritesDiv.appendChild(stockDiv);
-
-            // Add the new stock to the user's favorite stocks in the cookie
-            let favoriteStocks = JSON.parse(getFavoriteStocksCookie());
-            if (!favoriteStocks) {
-                favoriteStocks = [];
-            }
-            favoriteStocks.push(newStock);
-            setFavoriteStocksCookie(JSON.stringify(favoriteStocks), 30);
-
-            // Clear the input field
-            stockInput.value = "";
-        }
-    </script>
 </body>
 </html>
