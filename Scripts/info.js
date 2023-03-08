@@ -9,7 +9,7 @@
         "autosize": true,
         "symbol": "NASDAQ:AAPL",
         "interval": "D",
-        "timezone": "Etc/UTC",
+        "timezone": "America/Los_Angeles",
         "theme": "light",
         "style": "1",
         "locale": "en",
