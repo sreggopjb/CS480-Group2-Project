@@ -10,6 +10,7 @@
 	<!-- Custom styles for this template -->
 	<link href="Styles/dashboard.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<header>
@@ -20,11 +21,11 @@
 	</header>
 	<main>
 
-		<a href="info.html"><button class="glow-on-hover" type="button" >Edit</button></a>
+		<button class="glow-on-hover" type="button" id="edit_button" onclick="editMode()">Edit</button>
 		<div id="favorites">
 		</div>
-		<div id="add_popup">
-			<button type="button" onclick="showAdd">Add Stock</button>
+		<div id="editMode">
+			<button type="button" onclick="showAdd()">Add Stock</button>
 			<form id="add_form" action="add_stock()" method = "post">
 				<input type="text" placeholder="Stock Symbol"><br>
 				<input type="submit" value ="Add">

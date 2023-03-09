@@ -1,4 +1,5 @@
 "use strict";
+let favorites = ["TSLA", "AAPL", "AMZN", "MSFT"];
 $(document).ready(() => {
 //cookie
   //if theres a cookie
@@ -26,12 +27,15 @@ $(document).ready(() => {
         const stockPrice = parseFloat(stockInfo["4. close"]).toFixed(2);
         $('#favorites').append(`
         <a onclick="showStock('${stock}')">
-        <div class="stock_box">
-           <button>Delete</button>
-          <h2>${stock}</h2>
-        
-          <h2 class="stock_price">$${stockPrice}</h2>
-        </div></a>
+          <div class="stock_box">
+              <div>
+                  <a href ='#' onclick="del('${stock}')"><i class="fa fa-trash stock_buttons delete_button"></i></a>
+                  <a><i class="fa fa-refresh stock_buttons change_button"></i></a>
+              </div>
+            <h2>${stock}</h2>
+            <h2 class="stock_price">$${stockPrice}</h2>
+          </div>
+        </a>
       `);
       });
     });
@@ -44,9 +48,27 @@ function showStock(stock = "aaple"){
   localStorage.setItem("stock", stock);
   window.location.assign("../stock.html");
 }
-function addStock() {
-  let popup = document.getElementById("add_popup");
-  document.location.reload();
+function editMode() {
+  document.getElementById("editMode").style.visibility = "visible";
+  const temp =document.getElementsByClassName("stock_buttons");
+  for(let i= 0; i< temp.length; i++){
+    temp[i].style.visibility = "visible";
+  }
+  let button = document.getElementById("edit_button");
+  button.innerText = "Back";
+  button.setAttribute("onclick", 'toggleEdit()');
+}
+function toggleEdit(){
+  document.getElementById("editMode").style.visibility = "hidden";
+  const temp =document.getElementsByClassName("stock_buttons");
+  for(let i= 0; i< temp.length; i++){
+    temp[i].style.visibility = "hidden";
+  }
+  let button = document.getElementById("edit_button");
+  button.innerText = "Edit";
+  button.setAttribute("onclick", "editMode()");
+  document.getElementById("add_form").style.visibility=  'hidden';
+
 }
   // Show add stock popup
 
@@ -55,7 +77,23 @@ function addStock() {
 
 
   // Delete stock from favorites array and update cookie
+function del(stock){
+  console.log(stock);
+  let x = favorites.indexOf(stock);
+  favorites.splice(x, 1);
+  //need to update cookie here
+  window.location.reload();
 
+
+}
+function showAdd(){
+  document.getElementById("add_form").style.visibility=  'visible';
+
+}
+
+function add_stock(stock){
+  
+}
   // Function to check if a cookie exists
 
 /*  function checkCookie() {
