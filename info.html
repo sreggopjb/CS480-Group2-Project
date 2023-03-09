@@ -24,33 +24,7 @@
                 <table class="table table-striped table-sm">
 
                     <tbody id="tbody_content">
-                    //Script fills this in
                     <script src="Scripts/stockInfo.js"></script>
-                    <script>
-                                // var someDict{"OPEN": "12.34", Close: 13.24, Beta: 3.21 ...}
-
-                                //for each loop to go through the dictionary key and value
-                                    // append tbody_content
-                                        //one col to the key
-                                        // other col is value
-
-                                // $('#tbody_content').append(
-                                //     "<tr>" +
-                                //         "<td>"+dictkey+"</td>" +
-                                //         "<td>"+dictval+"</td>" +
-                                //     "</tr>"+
-                                //     "<tr>" +
-                                //     "<td>"+dictkey+"</td>" +
-                                //     "<td>"+dictval+"</td>" +
-                                //     "</tr>"+
-
-
-                                //)
-                               //<tr>
-                                    //<td>key</td>
-                                    //<td>value</td>
-                                //</tr>
-                    </script>
                     </tbody>
                 </table>
             </div>
@@ -78,4 +52,31 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="Scripts/moment.js"></script>
 <script src="Scripts/info.js"></script>
+
+
+<script>
+    var dict = {
+        company: "APPLE",
+        stockName: "AAPL",
+        stockPrice: 700.53,
+        trend: "up"
+    };
+
+    $('#tbody_content').append(
+        "<tr>" +
+        "<td>Stock Name</td>" +
+        "<td>" + dict["stockName"] + "</td>" +
+        "</tr>"+
+        "<tr>" +
+        "<td>Stock Price</td>" +
+        "<td>" + dict["stockPrice"] + "</td>" +
+        "<tr>" +
+        "<td>Trend</td>" +
+        "<td>" + dict["trend"] + "</td>" +
+        "</tr>"+
+        "</tr>");
+    $('#stockName').text(dict["stockName"]);
+    $('#company').text(dict["company"]);
+
+</script>
 </html>
