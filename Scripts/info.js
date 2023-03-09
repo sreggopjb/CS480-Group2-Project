@@ -1,8 +1,6 @@
 /* globals Chart:false, feather:false */
-
-(function () {
+$(document).ready(() => {
   'use strict'
-  feather.replace({ 'aria-hidden': 'true' })
   //Placeholder data
   var myChart = new TradingView.widget(
         {
@@ -19,5 +17,24 @@
         "container_id": "myChart"
         }
     );
-})()
-
+  var dict = {
+        stockName: "AAPL",
+                stockPrice: 701.53,
+                trend: "up"
+            };
+            $('#tbody_content').append(
+                    "<tr>" +
+                    "<td>Stock Name</td>" +
+                    "<td>" + dict["stockName"] + "</td>" +
+                    "</tr>"+
+                    "<tr>" +
+                    "<td>Stock Price</td>" +
+                    "<td>" + dict["stockPrice"] + "</td>" +
+                    "<tr>" +
+                    "<td>Trend</td>" +
+                    "<td>" + dict["trend"] + "</td>" +
+                    "</tr>"+
+                    "</tr>");
+                $('#stockName').text(dict["stockName"]);
+                $('#company').text(dict["company"]);
+})
