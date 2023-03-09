@@ -46,10 +46,13 @@ main{
     float: left;
 
 }
-#add_popup{
+#editMode{
     float: right;
-    display: none;
+    visibility: hidden;
     margin: 5px;
+}
+#add_form{
+    visibility: visible;
 }
 .stock_box{
     background: white;
@@ -57,6 +60,18 @@ main{
     margin: 3px;
     border: solid 1px;
     border-radius: 8px;
+    cursor: pointer;
+}
+.stock_buttons{
+    cursor: pointer;
+    visibility: hidden;}
+.delete_button{
+    float:left;
+    margin: 5px;
+}
+.change_button{
+    float:right;
+    margin: 5px;
 }
 
 
