@@ -2,10 +2,11 @@
 $(document).ready(() => {
   'use strict'
   //Placeholder data
+  var name = localStorage.getItem("stock");
   var myChart = new TradingView.widget(
         {
         "autosize": true,
-        "symbol": "NASDAQ:AAPL",
+        "symbol": "NASDAQ:" + name,
         "interval": "D",
         "timezone": "America/Los_Angeles",
         "theme": "light",
@@ -18,9 +19,9 @@ $(document).ready(() => {
         }
     );
   var dict = {
-        stockName: "AAPL",
-                stockPrice: 701.53,
-                trend: "up"
+        stockName:  name,
+                    stockPrice: 701.53,
+                    trend: "up"
             };
             $('#tbody_content').append(
                     "<tr>" +

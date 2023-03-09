@@ -26,8 +26,7 @@ $(document).ready(() => {
         const stockInfo = data["Time Series (Daily)"][Object.keys(data["Time Series (Daily)"])[0]];
         const stockPrice = parseFloat(stockInfo["4. close"]).toFixed(2);
         $('#favorites').append(`
-        <a onclick="showStock('${stock}')">
-          <div class="stock_box">
+          <div onclick="showStock('${stock}')" class="stock_box" style="cursor: pointer;">
               <div>
                   <a href ='#' onclick="del('${stock}')"><i class="fa fa-trash stock_buttons delete_button"></i></a>
                   <a><i class="fa fa-refresh stock_buttons change_button"></i></a>
@@ -35,7 +34,6 @@ $(document).ready(() => {
             <h2>${stock}</h2>
             <h2 class="stock_price">$${stockPrice}</h2>
           </div>
-        </a>
       `);
       });
     });
@@ -46,7 +44,7 @@ $(document).ready(() => {
 function showStock(stock = "aaple"){
   console.log(stock);
   localStorage.setItem("stock", stock);
-  window.location.assign("../stock.html");
+  window.location.assign("info.html");
 }
 function editMode() {
   document.getElementById("editMode").style.visibility = "visible";
