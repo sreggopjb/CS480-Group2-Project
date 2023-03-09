@@ -67,6 +67,7 @@ function toggleEdit(){
   let button = document.getElementById("edit_button");
   button.innerText = "Edit";
   button.setAttribute("onclick", "editMode()");
+  document.getElementById("add_form").style.visibility=  'hidden';
 
 }
   // Show add stock popup
@@ -83,6 +84,10 @@ function del(stock){
   //need to update cookie here
   window.location.reload();
 
+
+}
+function showAdd(){
+  document.getElementById("add_form").style.visibility=  'visible';
 
 }
 

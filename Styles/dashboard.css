@@ -52,7 +52,8 @@ main{
     margin: 5px;
 }
 #add_form{
-    visibility: visible;
+    visibility: hidden;
+    margin: 10px;
 }
 .stock_box{
     background: white;
