@@ -16,3 +16,7 @@ h1 {
 #stock-graph {
     height: 70%;
 }
+#dashboardBtn {
+    width: 100px;
+    border-radius: 6px;
+}

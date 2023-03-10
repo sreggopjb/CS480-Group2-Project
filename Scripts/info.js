@@ -1,7 +1,6 @@
 /* globals Chart:false, feather:false */
 $(document).ready(() => {
   'use strict'
-  //Placeholder data
   var name = localStorage.getItem("stock");
   var myChart = new TradingView.widget(
         {
@@ -38,4 +37,10 @@ $(document).ready(() => {
                     "</tr>");
                 $('#stockName').text(dict["stockName"]);
                 $('#company').text(dict["company"]);
+  // Click event listener for stock_box element
+  $('#dashboardBtn').on('click', function(event) {
+    //Stops the click event from bubbling up to underlying elements
+    event.stopPropagation();
+    window.location.assign("index.html");
+  });
 })
