@@ -103,7 +103,13 @@ function showAdd(){
 }
 
 function add_stock(stock){
-  
+  if(favorites.indexOf(stock) !=-1){
+    document.getElementById("error").innerText = "That Stock already exists in the dashboard";
+    return;
+  }
+  favorites.push(stock);
+  //Update cookie here
+  window.location.reload();
 }
   // Function to check if a cookie exists
 
