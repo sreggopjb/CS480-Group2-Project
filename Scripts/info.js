@@ -2,6 +2,7 @@
 $(document).ready(() => {
   'use strict'
   var name = localStorage.getItem("stock");
+  localStorage.removeItem("stock");
   var myChart = new TradingView.widget(
         {
         "autosize": true,

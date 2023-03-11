@@ -1,11 +1,11 @@
 "use strict";
-let favorites = ["TSLA", "AAPL", "AMZN", "MSFT"];
+import Cookies from '/path/to/js.cookie.mjs'
+let favorites;
 $(document).ready(() => {
-//cookie
-  //if theres a cookie
-  //get the array and pass it to the API
-  // if no cookie
-  //create one
+  if(!checkCookie()){
+    Cookies.set('favorites', favorites, {expires: 3});
+  }
+  favorites = Cookies.get('favorites');
   const apiKey = "NMBJV9I1JXOWWEZ6";
 
 
@@ -28,7 +28,7 @@ $(document).ready(() => {
         $('#favorites').append(`
           <div class="stock_box" style="cursor: pointer;">
               <div>
-                  <a href ='#'><i class="fa fa-trash stock_buttons delete_button"></i></a>
+                  <a href ='#' ><i class="fa fa-trash stock_buttons delete_button"></i></a>
                   <a><i class="fa fa-refresh stock_buttons change_button"></i></a>
               </div>
             <h2>${stock}</h2>
@@ -92,7 +92,7 @@ function del(stock){
   console.log(stock);
   let x = favorites.indexOf(stock);
   favorites.splice(x, 1);
-  //need to update cookie here
+  Cookies.set("favorites", JSON.stringify(favorites));
   window.location.reload();
 
 
@@ -108,26 +108,17 @@ function add_stock(stock){
     return;
   }
   favorites.push(stock);
-  //Update cookie here
+  Cookies.set("favorites", JSON.stringify(favorites));
   window.location.reload();
 }
   // Function to check if a cookie exists
 
-/*  function checkCookie() {
+  function checkCookie() {
     return document.cookie.indexOf("favorites") !== -1;
   }
 
   // Function to set a cookie
-  function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-      const date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-  }
-
+/*
 // Function to get the value of a cookie
 function getCookie(name) {
   const nameEQ = name + "=";
