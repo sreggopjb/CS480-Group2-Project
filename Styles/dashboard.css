@@ -42,7 +42,6 @@ main{
     padding: 10px;
     width: 75%;
     margin: 0 auto;
-    column-count: 2;
     float: left;
 
 }
@@ -62,6 +61,7 @@ main{
     border: solid 1px;
     border-radius: 8px;
     cursor: pointer;
+    
 }
 .stock_buttons{
     cursor: pointer;

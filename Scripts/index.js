@@ -23,7 +23,7 @@ $(document).ready(() => {
                     <a href ='#' ><i class="fa fa-trash stock_buttons delete_button"></i></a>
                     <a><i class="fa fa-refresh stock_buttons change_button"></i></a>
                 </div>
-              <h2>${stock}</h2>
+              <h2 class ="stock_title">${stock}</h2>
               <h2 class="stock_price">$${stockPrice}</h2>
             </div>
         `);
