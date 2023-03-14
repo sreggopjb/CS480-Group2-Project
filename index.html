@@ -21,20 +21,20 @@
 	</header>
 	<main>
 
-		<button class="glow-on-hover" type="button" id="edit_button" onclick="editMode()">Edit</button>
+		<button class="glow-on-hover" type="button" id="edit_button" onclick="javascript:editMode()">Edit</button>
 		<div id="favorites">
 		</div>
 		<div id="editMode">
+			<p>EDIT MODE</p>
 			<button type="button" onclick="showAdd()">Add Stock</button>
-			<form id="add_form" action="add_stock()" method = "post">
+			<form id="add_form" action="javascript:add_stock()" method = "post">
 				<span id = error></span>
-				<input type="text" placeholder="Stock Symbol"><br>
+				<input type="text" id="stock_name" placeholder="Stock Symbol"><br>
 				<input type="submit" value ="Add">
 			</form>
 		</div>
 	</main>
 
-	<script type="module">import Cookies from '/path/to/js.cookie.mjs'</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="Scripts/index.js"></script>
 </body>
