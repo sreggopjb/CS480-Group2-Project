@@ -19,38 +19,42 @@ $(document).ready(() => {
           const stockPrice = parseFloat(stockInfo["4. close"]).toFixed(2);
           $('#favorites').append(`
             <div class="stock_box" style="cursor: pointer;">
+                
                 <div>
                     <a href ='#' ><i class="fa fa-trash stock_buttons delete_button"></i></a>
                     <a><i class="fa fa-refresh stock_buttons change_button"></i></a>
                 </div>
               <h2 class ="stock_title">${stock}</h2>
               <h2 class="stock_price">$${stockPrice}</h2>
+              </div>
             </div>
         `);
           // Click event listener for stock_box element
           $('.stock_box').on('click', function(event) {
             //Stops the click event from bubbling up to underlying elements
-            event.stopPropagation();
-            showStock(stock);
-          });
 
+            showStock(stock);
+            event.stopImmediatePropagation();
+          });
           // Click event listener for delete_button element
           $('.delete_button').on('click', function(event) {
             //Stops the click event from bubbling up to underlying elements
-            event.stopPropagation();
             del(stock);
+            event.stopImmediatePropagation();
           });
         });
       });
+      let elements = document.getElementsByClassName("stock-box");
+      console.log(elements.length);
+
 
   }
     });
 
 
-function showStock(stock = "aaple"){
-  console.log(stock);
+function showStock(stock){
   localStorage.setItem("stock", stock);
-  window.location.assign("info.html");
+  window.location.assign("stock_info.html");
 }
 function editMode() {
   console.log("EditMode");

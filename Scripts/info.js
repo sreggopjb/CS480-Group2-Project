@@ -18,11 +18,6 @@ $(document).ready(() => {
         "container_id": "myChart"
         }
     );
-  var dict = {
-        stockName:  name,
-                    stockPrice: 701.53,
-                    trend: "up"
-            };
             $('#tbody_content').append(
                     "<tr>" +
                     "<td>Stock Name</td>" +
