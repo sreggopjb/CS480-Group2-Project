@@ -145,9 +145,6 @@ function getCookie() {
     cookieArray.forEach(data => {
       data = data.split('=');
 
-      //data[0]: Cookie name
-      //data[1]: Cookie value
-
       console.log(data[0]+ ' ' + data[1]);
       result = JSON.parse(data[1]);
 

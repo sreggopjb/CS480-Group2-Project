@@ -24,11 +24,9 @@ $(document).ready(()=>{
         $("#pe").text(pe);
         eps = parseFloat(data["EPS"]).toFixed(2);
         $("#eps").text(eps);
+
+        var exchange = data["Exchange"];
         // do something with beta, pe, and eps
     });
-    console.log(open);
-    $("#stock_info").append(`
-       
-        
-    `)
+
 });
