@@ -54,7 +54,7 @@ $(document).ready(() => {
 
 function showStock(stock){
   localStorage.setItem("stock", stock);
-  window.location.assign("stock_info.html");
+  window.location.assign("info.html");
 }
 function editMode() {
   console.log("EditMode");
@@ -104,7 +104,7 @@ function del(stock){
 
 
 function add_stock(){
-  let x = document.getElementById("stock_name").value;
+  let x = document.getElementById("stock_name").value.toUpperCase();
   if(favorites == null){
     favorites = [x];
     console.log(favorites);
